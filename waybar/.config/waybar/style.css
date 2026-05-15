@@ -1,13 +1,15 @@
 * {
     /* `otf-font-awesome` is required to be installed for icons */
-    font-family: FontAwesome, Roboto, Helvetica, Arial, sans-serif;
+    font-family: "JetBrainsMono Nerd Font", Roboto, Helvetica, Arial, sans-serif;
     font-size: 13px;
+    border: none;
+    border-radius: 0;
 }
 
 window#waybar {
-    background-color: rgba(43, 48, 59, 0.5);
-    border-bottom: 3px solid rgba(100, 114, 125, 0.5);
-    color: #ffffff;
+    background-color: rgba(26, 27, 38, 0.85);
+    border-bottom: 2px solid #bb9af7;
+    color: #c0caf5;
     transition-property: background-color;
     transition-duration: .5s;
 }
@@ -56,16 +58,21 @@ button:hover {
 #workspaces button {
     padding: 0 5px;
     background-color: transparent;
-    color: #ffffff;
+    color: #564f89;
+    border-bottom: 3px solid transparent;
 }
 
 #workspaces button:hover {
     background: rgba(0, 0, 0, 0.2);
+    box-shadow: inherit;
+    text-shadow: inherit;
+    color: #ff9e64;
 }
 
 #workspaces button.focused, #workspaces button.active {
-    background-color: #64727D;
-    box-shadow: inset 0 -3px #ffffff;
+    background-color: #bb9af7;
+    border-bottom: 3px solid #7dcfff;
+    background-color: rgba(187, 154, 247, 0.1);
 }
 
 #workspaces button.urgent {
@@ -95,7 +102,10 @@ button:hover {
 #power-profiles-daemon,
 #mpd {
     padding: 0 10px;
-    color: #ffffff;
+    margin: 4px 2px;
+    border-radius: 8px;
+    background-color: #24283b;
+
 }
 
 #window,
@@ -114,17 +124,18 @@ button:hover {
 }
 
 #clock {
-    background-color: #64727D;
+    color: #7dcfff;
+    font-weight: bold;
 }
 
-#battery {
-    background-color: #ffffff;
-    color: #000000;
+
+#battery.charging {
+    color: #9ece6a;
 }
 
-#battery.charging, #battery.plugged {
-    color: #ffffff;
-    background-color: #26A65B;
+#battery.warning:not(.charging) {
+    background-color: #f7768e;
+    color: #1a1b26;
 }
 
 @keyframes blink {
@@ -186,7 +197,7 @@ label:focus {
 }
 
 #network {
-    background-color: #2980b9;
+    background-color: #ff9e64;
 }
 
 #network.disconnected {
@@ -194,8 +205,7 @@ label:focus {
 }
 
 #pulseaudio {
-    background-color: #f1c40f;
-    color: #000000;
+    color: #bb9af7;
 }
 
 #pulseaudio.muted {
