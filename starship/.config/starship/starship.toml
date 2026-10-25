@@ -1,29 +1,18 @@
-# Cyberdeck Starship Layout
-
 format = """
-[┌──](bold #ff003c) $directory$git_branch
+[┌──](bold #ff003c)$directory$git_branch
 [└─>](bold #fcee09) """
 
-# Prompt character for commands
 [character]
 success_symbol = "[⚡](bold #fcee09)"
 error_symbol = "[ERR](bold #ff003c)"
 
-# Directory formatting
 [directory]
 style = "bold #fcee09"
 format = "[$path]($style) "
 truncation_length = 3
 truncation_symbol = "…/"
 
-# Git branch status
 [git_branch]
 symbol = "󰘬 "
 style = "bold #00f6ff"
 format = "on [$symbol$branch]($style) "
-
-# Execution time for long commands
-[cmd_duration]
-min_time = 2000
-style = "bold #b8ff00"
-format = "took [$duration]($style) "
